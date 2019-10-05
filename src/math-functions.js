@@ -85,10 +85,18 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function.
 To do addition, use your sum() function that you've already created. You're going to 
 have to be resourceful to figure out how to do this. However, you may continue 
 to use the + operator for string concatenation.
+
+The actual sentent is this - 'The numbers 2,3,4 have a sum of 9.'
 */
 
 export function sumArrayWithThreeNumbers(sumArr) {
-
+    let mySum = 0;
+    sumArr.forEach(sumArr => {
+        mySum += sumArr;
+    });
+    const stringOfSums = `The numbers ${sumArr[0]},${sumArr[1]},${sumArr[2]} have a sum of ${mySum}.`;
+    const mySumArray = [mySum, stringOfSums];
+    return mySumArray;
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
