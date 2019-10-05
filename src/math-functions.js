@@ -86,14 +86,23 @@ To do addition, use your sum() function that you've already created. You're goin
 have to be resourceful to figure out how to do this. However, you may continue 
 to use the + operator for string concatenation.
 
-The actual sentent is this - 'The numbers 2,3,4 have a sum of 9.'
+The actual sentence is this - 'The numbers 2,3,4 have a sum of 9.'
 */
 
 export function sumArrayWithThreeNumbers(sumArr) {
+    let i;
     let mySum = 0;
-    sumArr.forEach(sumArr => {
-        mySum += sumArr;
-    });
+    for(i = 0; i <= 2; i++) {
+        mySum = sum(sumArr[i], mySum)[0];
+    }
+   
+   
+    // let mySum = 0;
+    // let i;
+    // sumArr.forEach(sumArr => {
+    //     mySum = sum(sumArr[i])[0];
+    // });
+
     const stringOfSums = `The numbers ${sumArr[0]},${sumArr[1]},${sumArr[2]} have a sum of ${mySum}.`;
     const mySumArray = [mySum, stringOfSums];
     return mySumArray;
