@@ -86,14 +86,16 @@ To do addition, use your sum() function that you've already created. You're goin
 have to be resourceful to figure out how to do this. However, you may continue 
 to use the + operator for string concatenation.
 
-The actual sentent is this - 'The numbers 2,3,4 have a sum of 9.'
+The actual sentence is this - 'The numbers 2,3,4 have a sum of 9.'
 */
 
 export function sumArrayWithThreeNumbers(sumArr) {
+    let i;
     let mySum = 0;
-    sumArr.forEach(sumArr => {
-        mySum += sumArr;
-    });
+    for(i = 0; i <= 2; i++) {
+        mySum = sum(sumArr[i], mySum)[0];
+    }
+   
     const stringOfSums = `The numbers ${sumArr[0]},${sumArr[1]},${sumArr[2]} have a sum of ${mySum}.`;
     const mySumArray = [mySum, stringOfSums];
     return mySumArray;
@@ -119,10 +121,12 @@ you may continue to use the + operator for string concatenation.
 */
 
 export function multiplyArrayWithThreeNumbers(multArr) { //eslint-disable-line
+    let i;
     let myProduct = 1;
-    multArr.forEach(multArr => {
-        myProduct *= multArr;
-    });
+    for(i = 0; i <= 2; i++) {
+        myProduct = multiply(multArr[i], myProduct)[0];
+    }
+    
     const stringOfProducts = `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${myProduct}.`;
     const myProductArray = [myProduct, stringOfProducts];
     return myProductArray;
@@ -146,16 +150,15 @@ This function should be dynamic, accepting an array of any length.
 */
 
 export function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-    let myProduct = 1;
     let i;
-    for(i = 0; i <= dynamicArray.length; i++) {
-        myProduct = myProduct  dynamicArray[i];
+    let myDynamicProduct = 1;
+    let length = dynamicArray.length;
+    for(i = 0; i < length; i++) {
+        myDynamicProduct = multiply(dynamicArray[i], myDynamicProduct)[0];
     }
-    // multArr.forEach(multArr => {
-    //     myProduct *= multArr;
-    // });
-    const stringOfProducts = `The numbers ${dynamicArray[0]},${dynamicArray[1]},${dynamicArray[2]},${dynamicArray[3]},${dynamicArray[4]} have a product of ${myProduct}.`;
-    const myProductArray = [myProduct, stringOfProducts];
+    
+    const stringOfProducts = `The numbers ${dynamicArray[0]},${dynamicArray[1]},${dynamicArray[2]},${dynamicArray[3]},${dynamicArray[4]} have a product of ${myDynamicProduct}.`;
+    const myProductArray = [myDynamicProduct, stringOfProducts];
     return myProductArray;
 }
 
