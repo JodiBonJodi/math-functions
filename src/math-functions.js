@@ -90,11 +90,11 @@ The actual sentence is this - 'The numbers 2,3,4 have a sum of 9.'
 */
 
 export function sumArrayWithThreeNumbers(sumArr) {
-    let i;
+   
     let mySum = 0;
-    for(i = 0; i <= 2; i++) {
-        mySum = sum(sumArr[i], mySum)[0];
-    }
+    sumArr.forEach((i) => {
+        mySum = sum(i, mySum)[0];
+    });
    
     const stringOfSums = `The numbers ${sumArr[0]},${sumArr[1]},${sumArr[2]} have a sum of ${mySum}.`;
     const mySumArray = [mySum, stringOfSums];
@@ -121,11 +121,12 @@ you may continue to use the + operator for string concatenation.
 */
 
 export function multiplyArrayWithThreeNumbers(multArr) { //eslint-disable-line
-    let i;
+  
     let myProduct = 1;
-    for(i = 0; i <= 2; i++) {
-        myProduct = multiply(multArr[i], myProduct)[0];
-    }
+    multArr.forEach((i) => {
+        myProduct = multiply(i, myProduct)[0];
+    });
+   
     
     const stringOfProducts = `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${myProduct}.`;
     const myProductArray = [myProduct, stringOfProducts];
