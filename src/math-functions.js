@@ -11,7 +11,6 @@ example and uses the values that were input into the function:
 "The sum of 4 and 7 is 11."
 */
 
-
 export function sum(a, b) {
     const sumOfNumber = a + b;
     const stringOfNumber = `The sum of ${a} and ${b} is ${sumOfNumber}.`;
@@ -95,6 +94,12 @@ export function sumArrayWithThreeNumbers(sumArr) {
     for(i = 0; i <= 2; i++) {
         mySum = sum(sumArr[i], mySum)[0];
     }
+
+    // let mySum;
+    // let i;
+    // sumArr.forEach(item => {
+    //     mySum = sum(sumArr[i], mySum)[0];
+    // });
    
     const stringOfSums = `The numbers ${sumArr[0]},${sumArr[1]},${sumArr[2]} have a sum of ${mySum}.`;
     const mySumArray = [mySum, stringOfSums];
